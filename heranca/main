@@ -1,0 +1,35 @@
+import random
+
+class Pai():
+    def __init__(self):
+        self.sobrenome_pai = random.choice(["Silva", "Rocha", "Almeida", "Ferreira"])
+        self.riqueza_pai = random.choice(["Pobre", "Muito Pobre", "Sobrevive"])
+        self.locomocao_pai = random.choice(["Monza fumando", "Ônibus", "Pernas", "Uber"])
+        self.casa_pai = random.choice(["Barraco", "Barraco na casa da Ex-Sogra", "Albergue"])
+
+class Mae():
+    def __init__(self):
+        self.sobrenome_mae = random.choice(["Oliveira", "Costa", "Ribeiro", "Araujo"])
+        self.riqueza_mae = random.choice(["Rica", "Muito Rica", "Milionaria"])
+        self.locomocao_mae = random.choice(["Rolls Royce", "Bmw", "Ferrari", "Lamborghini"])
+        self.casa_mae = random.choice(["Mansão em Ibiza", "Mansões em Brasil", "Cobertura no RJ"])
+
+class Voce(Pai, Mae):
+    def __init__(self):
+        Pai.__init__(self)
+        Mae.__init__(self)
+        
+        self.nome = random.choice(["Leonardo", "Douglas", "Maria Fernanda", "Giovanna"])
+        self.sobrenome = random.choice([self.sobrenome_pai, self.sobrenome_mae])
+        self.riqueza = random.choice([self.riqueza_pai, self.riqueza_mae])
+        self.locomocao = random.choice([self.locomocao_pai, self.locomocao_mae])
+        self.casa = random.choice([self.casa_pai, self.casa_mae])
+        
+    def __str__(self):
+        return f"Seu Nome: {self.nome} {self.sobrenome}\nSua Riqueza: {self .riqueza}\nSua Locomoção: {self.locomocao}\nSua casa: {self.casa}"
+    
+
+eu = Voce()
+print(eu)
+
+
